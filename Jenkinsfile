@@ -10,7 +10,6 @@ pipeline {
     environment {
         NEXUS_USER_VAR      = credentials('NEXUS-USER')
         NEXUS_USER_PASS_VAR = credentials('NEXUS-PASS')        
-	TEST_URL = "http://localhost:8081/rest/mscovid/test?msg=testing"
         NEXUS_BASE_URL = "http://nexus:8081/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/"
         SONARQUBE_KEY = "feature-nexus"
         NEXUS_JAR_VERSION = "1.0.0"
@@ -71,7 +70,7 @@ pipeline {
         }
         stage("Paso 7: Test Alive Service - Testing Application!"){
             steps {
-                sh "curl -X GET ${env.TEST_URL}"
+		sh 'curl -X GET "http://localhost:8081/rest/mscovid/test?msg=testing"'
             }
         }
         stage("Paso 8: Subir nueva Version"){
