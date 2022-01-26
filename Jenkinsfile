@@ -10,7 +10,6 @@ pipeline {
     environment {
         NEXUS_USER_VAR      = credentials('NEXUS-USER')
         NEXUS_USER_PASS_VAR = credentials('NEXUS-PASS')        
-        TEST_SLEEP = 30
 	TEST_URL = "http://localhost:8081/rest/mscovid/test?msg=testing"
         NEXUS_BASE_URL = "http://nexus:8081/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/"
         SONARQUBE_KEY = "feature-nexus"
@@ -67,7 +66,7 @@ pipeline {
         }
         stage("Paso 6: Dormir"){
             steps {
-		sleep (time: ${env.TEST_SLEEP}, unit: "SECONDS")
+		sleep (time: 30, unit: "SECONDS")
             }
         }
         stage("Paso 7: Test Alive Service - Testing Application!"){
@@ -110,7 +109,7 @@ pipeline {
         }
         stage("Paso 11: Dormir"){
             steps {
-                sh "sleep ${env.TEST_SLEEP}"
+		 sleep (time: 30, unit: "SECONDS")                
             }
         }
         stage("Paso 12: Test Alive Service"){
