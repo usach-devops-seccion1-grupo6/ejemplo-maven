@@ -8,9 +8,10 @@ pipeline {
     agent any
 
     environment {
-        NEXUS_CREDS = credentials('user-password-nexus')
+        NEXUS_USER_VAR      = credentials('NEXUS-USER')
+        NEXUS_USER_PASS_VAR = credentials('NEXUS-PASS')        
         TEST_SLEEP = 20
-        TEST_URL = "http://localhost:8081/rest/mscovid/test?msg=testing"
+	TEST_URL = "http://localhost:8081/rest/mscovid/test?msg=testing"
         NEXUS_BASE_URL = "http://nexus:8081/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/"
         SONARQUBE_KEY = "feature-nexus"
         NEXUS_JAR_VERSION = "1.0.0"
