@@ -65,7 +65,7 @@ pipeline {
         }
         stage("Paso 6: Dormir"){
             steps {
-		sleep (time: 30, unit: "SECONDS")
+		sleep (time: 60, unit: "SECONDS")
             }
         }
         stage("Paso 7: Test Alive Service - Testing Application!"){
