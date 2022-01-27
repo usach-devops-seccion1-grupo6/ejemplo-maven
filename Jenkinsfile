@@ -98,7 +98,7 @@ pipeline {
                 // borro archivo
                 sh "rm ${env.WORKSPACE}/build/DevOpsUsach2020-0.0.1.jar"
                 // obtengo archivo desde nexus
-                sh "curl -X GET -u $NEXUS_CREDS_USR:$NEXUS_CREDS_PSW ${env.NEXUS_BASE_URL}${env.NEXUS_JAR_VERSION}/DevOpsUsach2020-${env.NEXUS_JAR_VERSION}.jar -o ${env.WORKSPACE}/build/DevOpsUsach2020-0.0.1.jar"
+                sh "curl -X GET -u $NEXUS_USER_VAR:$NEXUS_USER_PASS_VAR ${env.NEXUS_BASE_URL}${env.NEXUS_JAR_VERSION}/DevOpsUsach2020-${env.NEXUS_JAR_VERSION}.jar -o ${env.WORKSPACE}/build/DevOpsUsach2020-0.0.1.jar"
             }
         }
         stage("Paso 10: Levantar Springboot APP"){
