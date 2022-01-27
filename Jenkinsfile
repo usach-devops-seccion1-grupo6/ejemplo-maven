@@ -113,7 +113,7 @@ pipeline {
         }
         stage("Paso 12: Test Alive Service"){
             steps {
-                sh "curl -X GET ${env.TEST_URL}"
+ 		sh 'curl -X GET "http://localhost:8081/rest/mscovid/test?msg=testing"'
             }
         }
     }
