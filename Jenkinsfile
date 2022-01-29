@@ -9,7 +9,7 @@ pipeline {
 
     environment {
         NEXUS_CREDS = credentials('user-password-nexus')
-        TEST_SLEEP = 20
+        TEST_SLEEP = 80
         TEST_URL = "http://localhost:8081/rest/mscovid/test?msg=testing"
         NEXUS_BASE_URL = "http://nexus:8081/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/"
         SONARQUBE_KEY = "feature-nexus"
